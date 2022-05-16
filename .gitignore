@@ -331,10 +331,10 @@ paket-files/
 *.sln.iml
 
 # VisualStudioCode
-.vscode/*
+.vscode
 
 # Husky
-.husky/*
+.husky
 
 # CodeRush
 .cr/
