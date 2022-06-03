@@ -3,15 +3,16 @@ import { Injectable } from '@nestjs/common';
 import { AxiosResponse } from 'axios';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ICountry } from '../models/ICountry';
 
 @Injectable()
-export class CountriesListService {
+export class CountriesService {
   constructor(private httpService: HttpService) {}
 
-  GetAll(): Observable<AxiosResponse> {
+  getAll(): Observable<AxiosResponse> {
     const response = this.httpService
       .get('https://restcountries.com/v2/all')
-      .pipe(map(res => res.data.map((country: any) => country.name)));
+      .pipe(map(res => res.data.map((country: ICountry) => country.name)));
 
     const result = response;
 

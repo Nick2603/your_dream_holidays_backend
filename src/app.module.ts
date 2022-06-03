@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { CountriesListModule } from './countriesList/countriesList.module';
+import { CountriesModule } from './countries/countries.module';
 
 @Module({
   controllers: [],
@@ -18,7 +18,7 @@ import { CountriesListModule } from './countriesList/countriesList.module';
       models: [],
       autoLoadModels: true,
     }),
-    CountriesListModule,
+    CountriesModule,
   ],
 })
 export class AppModule {}
