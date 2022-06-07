@@ -10,12 +10,8 @@ export class CountriesService {
   constructor(private httpService: HttpService) {}
 
   getAll(): Observable<AxiosResponse> {
-    const response = this.httpService
+    return this.httpService
       .get('https://restcountries.com/v2/all')
       .pipe(map(res => res.data.map((country: ICountry) => country.name)));
-
-    const result = response;
-
-    return result;
   }
 }
